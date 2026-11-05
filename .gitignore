@@ -3,3 +3,4 @@ dist/
 nbproject/private/
 *.class
 *.log
+/TicketTurno/nbproject/private/
