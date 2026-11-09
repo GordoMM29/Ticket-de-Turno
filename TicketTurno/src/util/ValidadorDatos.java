@@ -7,7 +7,7 @@ package util;
 
 import java.util.regex.Pattern;
 
-public class ValidadorDatos {
+public final class ValidadorDatos {
     
     private static final Pattern CORREO =
             Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
