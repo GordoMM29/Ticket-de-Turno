@@ -17,7 +17,7 @@ import java.util.Properties;
  * PATRON DE DISEÑO 1: SINGLETON.
  * Garantiza que exista una sola instancia de Conexion en toda la aplicacion.
  *
- * Los datos de conexion se leen del archivo (si existe) que cada integrante guarda en su computadora, sin subirlo a GitHub.
+ * Los datos de conexion se leen del archivo que cada integrante guarda en su computadora
  */
 
 public final class Conexion {
