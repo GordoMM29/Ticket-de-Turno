@@ -3,4 +3,5 @@ dist/
 nbproject/private/
 *.class
 *.log
+conexion.properties
 /TicketTurno/nbproject/private/
