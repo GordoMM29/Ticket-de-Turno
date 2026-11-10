@@ -65,7 +65,7 @@ public class FrmLogin extends javax.swing.JFrame {
         });
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnSalir.setText("SALIR");
+        btnSalir.setText("LIMPIAR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -89,7 +89,7 @@ public class FrmLogin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(btnEntrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addComponent(btnSalir)
                 .addGap(116, 116, 116))
         );
@@ -123,17 +123,11 @@ public class FrmLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContrasenaActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        if (txtUsuario.getText().trim().isEmpty() || txtContrasena.getPassword().length == 0) {
-    javax.swing.JOptionPane.showMessageDialog(this, "Escribe usuario y contraseña",
-            "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
-    return;
-     }
-    // TODO: aquí el controlador validará contra la base de datos
-    javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
+        //Va en el controlador
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        System.exit(0);
+        //Va en el controlador
     }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
@@ -170,18 +164,22 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
     }
-    
-    public String getUsuario() {
-    return txtUsuario.getText().trim();
+    //Para el controlador
+    public String getUsuario() { return txtUsuario.getText().trim(); }
+    public String getContrasena() { return new String(txtContrasena.getPassword()); }
+
+    public void limpiar() {
+        txtUsuario.setText("");
+        txtContrasena.setText("");
     }
 
-    public String getContrasena() {
-    return new String(txtContrasena.getPassword());
+    public void limpiarContrasena() {
+        txtContrasena.setText("");
+        txtContrasena.requestFocus();
     }
 
-    public javax.swing.JButton getBtnEntrar() {
-           return btnEntrar;
-    }
+    public javax.swing.JButton getBtnEntrar() { return btnEntrar; }
+    public javax.swing.JButton getBtnSalir() { return btnSalir; }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Contrasena;
