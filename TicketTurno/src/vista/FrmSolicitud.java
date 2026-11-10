@@ -271,30 +271,15 @@ public class FrmSolicitud extends javax.swing.JFrame {
     }//GEN-LAST:event_txtApPaternoActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        if (txtCurp.getText().trim().isEmpty()
-        || txtTramitante.getText().trim().isEmpty()
-        || txtNombreAlumno.getText().trim().isEmpty()
-        || txtApPaterno.getText().trim().isEmpty()
-        || txtTelefono.getText().trim().isEmpty()
-        || txtCorreo.getText().trim().isEmpty()
-        || cmbNivel.getSelectedItem() == null
-        || cmbMunicipio.getSelectedItem() == null
-        || cmbAsunto.getSelectedItem() == null) {
-    javax.swing.JOptionPane.showMessageDialog(this,
-            "Completa todos los campos (el apellido materno es opcional)",
-            "Aviso", javax.swing.JOptionPane.WARNING_MESSAGE);
-    return;
-}
-// TODO: aquí el controlador validará la CURP, asignará el turno y guardará
-javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
+        //Las funciones van en el controlador
     }//GEN-LAST:event_btnRegistrarActionPerformed
-
+        //Las funciones van en el controlador
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        limpiar();
+        //Las funciones van en el controlador
     }//GEN-LAST:event_btnLimpiarActionPerformed
-
+        //Las funciones van en el controlador
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        dispose();
+        //Las funciones van en el controlador
     }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
@@ -332,63 +317,99 @@ javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el cont
         });
     }
     
-    // Lectura de datos
-    public String getCurp() { return txtCurp.getText().trim().toUpperCase(); }
-    public String getTramitante() { return txtTramitante.getText().trim(); }
-    public String getNombreAlumno() { return txtNombreAlumno.getText().trim(); }
-    public String getApPaterno() { return txtApPaterno.getText().trim(); }
-    public String getApMaterno() { return txtApMaterno.getText().trim(); }
-    public String getTelefono() { return txtTelefono.getText().trim(); }
-    public String getCorreo() { return txtCorreo.getText().trim(); }
+//Lectura de datos
+public String getCurp() { return txtCurp.getText().trim().toUpperCase(); }
+public String getTramitante() { return txtTramitante.getText().trim(); }
+public String getNombreAlumno() { return txtNombreAlumno.getText().trim(); }
+public String getApPaterno() { return txtApPaterno.getText().trim(); }
+public String getApMaterno() { return txtApMaterno.getText().trim(); }
+public String getTelefono() { return txtTelefono.getText().trim(); }
+public String getCorreo() { return txtCorreo.getText().trim(); }
 
-    public modelo.NivelEducativo getNivelSeleccionado() {
-        return (modelo.NivelEducativo) cmbNivel.getSelectedItem();
+public modelo.NivelEducativo getNivelSeleccionado() {
+    return (modelo.NivelEducativo) cmbNivel.getSelectedItem();
+}
+
+public modelo.Municipio getMunicipioSeleccionado() {
+    return (modelo.Municipio) cmbMunicipio.getSelectedItem();
+}
+
+public modelo.Asunto getAsuntoSeleccionado() {
+    return (modelo.Asunto) cmbAsunto.getSelectedItem();
+}
+
+// Llenar de combos
+@SuppressWarnings({"unchecked", "rawtypes"})
+public void cargarNiveles(java.util.List<modelo.NivelEducativo> lista) {
+    cmbNivel.setModel(new javax.swing.DefaultComboBoxModel(lista.toArray()));
+}
+
+@SuppressWarnings({"unchecked", "rawtypes"})
+public void cargarMunicipios(java.util.List<modelo.Municipio> lista) {
+    cmbMunicipio.setModel(new javax.swing.DefaultComboBoxModel(lista.toArray()));
+}
+
+@SuppressWarnings({"unchecked", "rawtypes"})
+public void cargarAsuntos(java.util.List<modelo.Asunto> lista) {
+    cmbAsunto.setModel(new javax.swing.DefaultComboBoxModel(lista.toArray()));
+}
+
+//Modo registrar / modo modificar
+public void setModoEdicion(boolean edicion) {
+    txtCurp.setEnabled(!edicion);          // la CURP (llave) no se cambia
+    cmbMunicipio.setEnabled(!edicion);     // el turno pertenece al municipio
+    btnRegistrar.setText(edicion ? "Guardar cambios" : "Registrar");
+    setTitle(edicion ? "Modificar solicitud" : "Registrar solicitud");
+}
+
+public void cargarSolicitud(modelo.Solicitud s) {
+    txtCurp.setText(s.getCurp());
+    txtTramitante.setText(s.getNombreTramitante());
+    txtNombreAlumno.setText(s.getNombreAlumno());
+    txtApPaterno.setText(s.getApellidoPaterno());
+    txtApMaterno.setText(s.getApellidoMaterno() == null ? "" : s.getApellidoMaterno());
+    txtTelefono.setText(s.getTelefono());
+    txtCorreo.setText(s.getCorreo());
+
+    for (int i = 0; i < cmbNivel.getItemCount(); i++) {
+        Object o = cmbNivel.getItemAt(i);
+        if (((modelo.NivelEducativo) o).getIdNivel() == s.getIdNivel()) {
+            cmbNivel.setSelectedIndex(i);
+            break;
+        }
     }
-
-    public modelo.Municipio getMunicipioSeleccionado() {
-        return (modelo.Municipio) cmbMunicipio.getSelectedItem();
+    for (int i = 0; i < cmbMunicipio.getItemCount(); i++) {
+        Object o = cmbMunicipio.getItemAt(i);
+        if (((modelo.Municipio) o).getIdMunicipio() == s.getIdMunicipio()) {
+            cmbMunicipio.setSelectedIndex(i);
+            break;
+        }
     }
-
-    public modelo.Asunto getAsuntoSeleccionado() {
-        return (modelo.Asunto) cmbAsunto.getSelectedItem();
+    for (int i = 0; i < cmbAsunto.getItemCount(); i++) {
+        Object o = cmbAsunto.getItemAt(i);
+        if (((modelo.Asunto) o).getIdAsunto() == s.getIdAsunto()) {
+            cmbAsunto.setSelectedIndex(i);
+            break;
+        }
     }
+}
 
-    public javax.swing.JButton getBtnRegistrar() { return btnRegistrar; }
+public void limpiar() {
+    txtCurp.setText("");
+    txtTramitante.setText("");
+    txtNombreAlumno.setText("");
+    txtApPaterno.setText("");
+    txtApMaterno.setText("");
+    txtTelefono.setText("");
+    txtCorreo.setText("");
+    if (cmbNivel.getItemCount() > 0) cmbNivel.setSelectedIndex(0);
+    if (cmbMunicipio.getItemCount() > 0) cmbMunicipio.setSelectedIndex(0);
+    if (cmbAsunto.getItemCount() > 0) cmbAsunto.setSelectedIndex(0);
+}
 
-    //Llenado de combos
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public void cargarNiveles(java.util.List<modelo.NivelEducativo> lista) {
-        cmbNivel.setModel(new javax.swing.DefaultComboBoxModel(lista.toArray()));
-    }
-
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public void cargarMunicipios(java.util.List<modelo.Municipio> lista) {
-        cmbMunicipio.setModel(new javax.swing.DefaultComboBoxModel(lista.toArray()));
-    }
-
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public void cargarAsuntos(java.util.List<modelo.Asunto> lista) {
-        cmbAsunto.setModel(new javax.swing.DefaultComboBoxModel(lista.toArray()));
-    }
-
-    //Utilidades
-    public void mostrarMensaje(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
-    }
-
-    public void limpiar() {
-        txtCurp.setText("");
-        txtTramitante.setText("");
-        txtNombreAlumno.setText("");
-        txtApPaterno.setText("");
-        txtApMaterno.setText("");
-        txtTelefono.setText("");
-        txtCorreo.setText("");
-        if (cmbNivel.getItemCount() > 0) cmbNivel.setSelectedIndex(0);
-        if (cmbMunicipio.getItemCount() > 0) cmbMunicipio.setSelectedIndex(0);
-        if (cmbAsunto.getItemCount() > 0) cmbAsunto.setSelectedIndex(0);
-    }
-
+public javax.swing.JButton getBtnRegistrar() { return btnRegistrar; }
+public javax.swing.JButton getBtnLimpiar() { return btnLimpiar; }
+public javax.swing.JButton getBtnVolver() { return btnVolver; }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
