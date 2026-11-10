@@ -12,21 +12,21 @@ public class FrmConsulta extends javax.swing.JFrame {
      */
     
     private javax.swing.table.DefaultTableModel modeloTabla;
-    
-    public FrmConsulta() {
-    initComponents();
-    setLocationRelativeTo(null);
 
-    // Columnas de la tabla (las celdas no se pueden editar a mano)
-    modeloTabla = new javax.swing.table.DefaultTableModel(
-            new Object[]{"Turno", "CURP", "Alumno", "Municipio", "Nivel", "Asunto", "Estatus", "Fecha"}, 0) {
-        @Override
-        public boolean isCellEditable(int fila, int columna) {
-            return false;
-        }
-    };
-    tblSolicitudes.setModel(modeloTabla);
-    tblSolicitudes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+    public FrmConsulta() {
+        initComponents();
+        setLocationRelativeTo(null);
+
+        // Columnas de la tabla (las celdas no se pueden editar a mano)
+        modeloTabla = new javax.swing.table.DefaultTableModel(
+                new Object[]{"Turno", "CURP", "Alumno", "Municipio", "Nivel", "Asunto", "Estatus", "Fecha"}, 0) {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+            }
+        };
+        tblSolicitudes.setModel(modeloTabla);
+        tblSolicitudes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
     }
 
     /**
@@ -48,6 +48,8 @@ public class FrmConsulta extends javax.swing.JFrame {
         btnResolver = new javax.swing.JButton();
         btnVerTodas = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        btnPendiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -123,39 +125,57 @@ public class FrmConsulta extends javax.swing.JFrame {
             }
         });
 
+        btnRegistrar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnRegistrar.setText("Registrar nueva");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        btnPendiente.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        btnPendiente.setText("Marcar pendiente");
+        btnPendiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPendienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1)
                         .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85)
+                        .addComponent(btnBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnVerTodas)
+                        .addGap(41, 41, 41))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(85, 85, 85)
-                                .addComponent(btnBuscar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnResolver)
-                                .addGap(52, 52, 52)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnVolver)
-                                    .addComponent(btnModificar))
-                                .addGap(62, 62, 62)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnVerTodas)
-                                .addGap(41, 41, 41))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnEliminar)
-                                .addGap(168, 168, 168))))))
+                        .addGap(67, 67, 67)
+                        .addComponent(btnResolver)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnModificar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPendiente)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRegistrar)
+                        .addGap(84, 84, 84))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnVolver)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,10 +198,12 @@ public class FrmConsulta extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnModificar)
                     .addComponent(btnEliminar)
-                    .addComponent(btnResolver))
-                .addGap(40, 40, 40)
+                    .addComponent(btnResolver)
+                    .addComponent(btnRegistrar)
+                    .addComponent(btnPendiente))
+                .addGap(38, 38, 38)
                 .addComponent(btnVolver)
-                .addGap(22, 22, 22))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -196,42 +218,32 @@ public class FrmConsulta extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
+        //Controlador
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnVerTodasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerTodasActionPerformed
-        txtBuscar.setText("");
-        javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
+        //Controlador
     }//GEN-LAST:event_btnVerTodasActionPerformed
 
     private void btnResolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResolverActionPerformed
-        if (!haySeleccion()) {
-            return;
-    }
-    // TODO: aquí el controlador cambiará el estatus a Resuelto
-    javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
+        //Controlador
     }//GEN-LAST:event_btnResolverActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        if (!haySeleccion()) {
-    return;
-    }
-    // TODO: aquí el controlador abrirá la edición de la solicitud
-    javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
+        //Controlador
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (!haySeleccion()) {
-    return;
-    }
-    int r = javax.swing.JOptionPane.showConfirmDialog(this,
-            "¿Seguro que quieres eliminar esta solicitud?",
-            "Confirmar", javax.swing.JOptionPane.YES_NO_OPTION);
-    if (r == javax.swing.JOptionPane.YES_OPTION) {
-        // TODO: aquí el controlador eliminará la solicitud
-        javax.swing.JOptionPane.showMessageDialog(this, "Pendiente: conectar con el controlador");
-    }
+        //Controlador
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnPendienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPendienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -268,12 +280,11 @@ public class FrmConsulta extends javax.swing.JFrame {
         });
     }
     
-    //CONTROLADOR
-    public String getTextoBusqueda() {
-        return txtBuscar.getText().trim();
-    }
+    // Para el controlador
+    public String getTextoBusqueda() { return txtBuscar.getText().trim(); }
+    public void setTextoBusqueda(String texto) { txtBuscar.setText(texto); }
 
-    // Llena la tabla
+    // Llena la tabla: cada fila es un Object[] con las 8 columnas en orden
     public void cargarTabla(java.util.List<Object[]> filas) {
         modeloTabla.setRowCount(0);
         for (Object[] fila : filas) {
@@ -281,7 +292,7 @@ public class FrmConsulta extends javax.swing.JFrame {
         }
     }
 
-    // Devuelve la CURP de la fila seleccionada (o null si no hay ninguna)
+    // CURP de la fila seleccionada (o null si no hay ninguna)
     public String getCurpSeleccionada() {
         int fila = tblSolicitudes.getSelectedRow();
         if (fila == -1) {
@@ -292,29 +303,19 @@ public class FrmConsulta extends javax.swing.JFrame {
 
     public javax.swing.JButton getBtnBuscar() { return btnBuscar; }
     public javax.swing.JButton getBtnVerTodas() { return btnVerTodas; }
-    public javax.swing.JButton getBtnResolver() { return btnResolver; }
+    public javax.swing.JButton getBtnRegistrar() { return btnRegistrar; }
     public javax.swing.JButton getBtnModificar() { return btnModificar; }
     public javax.swing.JButton getBtnEliminar() { return btnEliminar; }
-
-    public void mostrarMensaje(String mensaje) {
-        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
-    }
-
-    // Avisa si el usuario no ha elegido una fila de la tabla
-    private boolean haySeleccion() {
-        if (tblSolicitudes.getSelectedRow() == -1) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "Selecciona una solicitud de la tabla", "Aviso",
-                    javax.swing.JOptionPane.WARNING_MESSAGE);
-            return false;
-        }
-        return true;
-    }
+    public javax.swing.JButton getBtnResolver() { return btnResolver; }
+    public javax.swing.JButton getBtnPendiente() { return btnPendiente; }
+    public javax.swing.JButton getBtnVolver() { return btnVolver; }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnPendiente;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnResolver;
     private javax.swing.JButton btnVerTodas;
     private javax.swing.JButton btnVolver;
