@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="modelo">
+  <ClassDiagramComponents>
+    <Class name="Administrador" package="modelo" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="idAdmin" type="int" visibility="private"/>
+        <Field name="usuario" type="String" visibility="private"/>
+        <Field name="contrasena" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idAdmin"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdAdmin" returnType="int" visibility="public"/>
+        <Method name="setIdAdmin" returnType="void" visibility="public">
+          <Argument type="int" name="idAdmin"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="setContrasena" returnType="void" visibility="public">
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AdministradorDAO" package="modelo" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="autenticar" returnType="Administrador" visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="clave"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Asunto" package="modelo" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="idAsunto" type="int" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idAsunto"/>
+          <Argument type="String" name="descripcion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdAsunto" returnType="int" visibility="public"/>
+        <Method name="setIdAsunto" returnType="void" visibility="public">
+          <Argument type="int" name="idAsunto"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AsuntoDAO" package="modelo" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="Asunto" visibility="protected">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CatalogoDAO" package="modelo" visibility="public" isAbstract="true" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="tabla" type="String" visibility="private" isFinal="true"/>
+        <Field name="columnaId" type="String" visibility="private" isFinal="true"/>
+        <Field name="columnaTexto" type="String" visibility="private" isFinal="true"/>
+        <Field name="orden" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="tabla"/>
+          <Argument type="String" name="columnaId"/>
+          <Argument type="String" name="columnaTexto"/>
+          <Argument type="String" name="orden"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="T" visibility="protected" isAbstract="true">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+        <Method name="con" returnType="Connection" visibility="private"/>
+        <Method name="listar" returnType="List&lt;T&gt;" visibility="public"/>
+        <Method name="listarFilas" returnType="List&lt;Object[]&gt;" visibility="public"/>
+        <Method name="buscarPorId" returnType="T" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="insertar" returnType="boolean" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="actualizar" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="eliminar" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Estatus" package="modelo" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="PENDIENTE" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="RESUELTO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="idEstatus" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idEstatus"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdEstatus" returnType="int" visibility="public"/>
+        <Method name="setIdEstatus" returnType="void" visibility="public">
+          <Argument type="int" name="idEstatus"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Municipio" package="modelo" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="idMunicipio" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="ultimoTurno" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idMunicipio"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="ultimoTurno"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdMunicipio" returnType="int" visibility="public"/>
+        <Method name="setIdMunicipio" returnType="void" visibility="public">
+          <Argument type="int" name="idMunicipio"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getUltimoTurno" returnType="int" visibility="public"/>
+        <Method name="setUltimoTurno" returnType="void" visibility="public">
+          <Argument type="int" name="ultimoTurno"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MunicipioDAO" package="modelo" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="Municipio" visibility="protected">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NivelEducativo" package="modelo" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="idNivel" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idNivel"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdNivel" returnType="int" visibility="public"/>
+        <Method name="setIdNivel" returnType="void" visibility="public">
+          <Argument type="int" name="idNivel"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NivelEducativoDAO" package="modelo" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="NivelEducativo" visibility="protected">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Solicitud" package="modelo" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="curp" type="String" visibility="private"/>
+        <Field name="nombreTramitante" type="String" visibility="private"/>
+        <Field name="nombreAlumno" type="String" visibility="private"/>
+        <Field name="apellidoPaterno" type="String" visibility="private"/>
+        <Field name="apellidoMaterno" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+        <Field name="correo" type="String" visibility="private"/>
+        <Field name="idNivel" type="int" visibility="private"/>
+        <Field name="idMunicipio" type="int" visibility="private"/>
+        <Field name="idAsunto" type="int" visibility="private"/>
+        <Field name="turno" type="int" visibility="private"/>
+        <Field name="idEstatus" type="int" visibility="private"/>
+        <Field name="fechaRegistro" type="Timestamp" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="curp"/>
+          <Argument type="String" name="nombreTramitante"/>
+          <Argument type="String" name="nombreAlumno"/>
+          <Argument type="String" name="apellidoPaterno"/>
+          <Argument type="String" name="apellidoMaterno"/>
+          <Argument type="String" name="telefono"/>
+          <Argument type="String" name="correo"/>
+          <Argument type="int" name="idNivel"/>
+          <Argument type="int" name="idMunicipio"/>
+          <Argument type="int" name="idAsunto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCurp" returnType="String" visibility="public"/>
+        <Method name="setCurp" returnType="void" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="getNombreTramitante" returnType="String" visibility="public"/>
+        <Method name="setNombreTramitante" returnType="void" visibility="public">
+          <Argument type="String" name="nombreTramitante"/>
+        </Method>
+        <Method name="getNombreAlumno" returnType="String" visibility="public"/>
+        <Method name="setNombreAlumno" returnType="void" visibility="public">
+          <Argument type="String" name="nombreAlumno"/>
+        </Method>
+        <Method name="getApellidoPaterno" returnType="String" visibility="public"/>
+        <Method name="setApellidoPaterno" returnType="void" visibility="public">
+          <Argument type="String" name="apellidoPaterno"/>
+        </Method>
+        <Method name="getApellidoMaterno" returnType="String" visibility="public"/>
+        <Method name="setApellidoMaterno" returnType="void" visibility="public">
+          <Argument type="String" name="apellidoMaterno"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="getCorreo" returnType="String" visibility="public"/>
+        <Method name="setCorreo" returnType="void" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="getIdNivel" returnType="int" visibility="public"/>
+        <Method name="setIdNivel" returnType="void" visibility="public">
+          <Argument type="int" name="idNivel"/>
+        </Method>
+        <Method name="getIdMunicipio" returnType="int" visibility="public"/>
+        <Method name="setIdMunicipio" returnType="void" visibility="public">
+          <Argument type="int" name="idMunicipio"/>
+        </Method>
+        <Method name="getIdAsunto" returnType="int" visibility="public"/>
+        <Method name="setIdAsunto" returnType="void" visibility="public">
+          <Argument type="int" name="idAsunto"/>
+        </Method>
+        <Method name="getTurno" returnType="int" visibility="public"/>
+        <Method name="setTurno" returnType="void" visibility="public">
+          <Argument type="int" name="turno"/>
+        </Method>
+        <Method name="getIdEstatus" returnType="int" visibility="public"/>
+        <Method name="setIdEstatus" returnType="void" visibility="public">
+          <Argument type="int" name="idEstatus"/>
+        </Method>
+        <Method name="getFechaRegistro" returnType="Timestamp" visibility="public"/>
+        <Method name="setFechaRegistro" returnType="void" visibility="public">
+          <Argument type="Timestamp" name="fechaRegistro"/>
+        </Method>
+        <Method name="getNombreCompleto" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SolicitudDAO" package="modelo" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="con" returnType="Connection" visibility="private"/>
+        <Method name="nullSiVacio" returnType="String" visibility="private" isStatic="true">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="registrar" returnType="int" visibility="public">
+          <Argument type="Solicitud" name="s"/>
+        </Method>
+        <Method name="siguienteTurno" returnType="int" visibility="private">
+          <Argument type="Connection" name="con"/>
+          <Argument type="int" name="idMunicipio"/>
+        </Method>
+        <Method name="existe" returnType="boolean" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="buscarPorCurp" returnType="Solicitud" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="buscarPorCurpYTurno" returnType="Solicitud" visibility="public">
+          <Argument type="String" name="curp"/>
+          <Argument type="int" name="turno"/>
+        </Method>
+        <Method name="listarFilas" returnType="List&lt;Object[]&gt;" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="actualizar" returnType="boolean" visibility="public">
+          <Argument type="Solicitud" name="s"/>
+        </Method>
+        <Method name="cambiarEstatus" returnType="boolean" visibility="public">
+          <Argument type="String" name="curp"/>
+          <Argument type="int" name="idEstatus"/>
+        </Method>
+        <Method name="eliminar" returnType="boolean" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="contarPorEstatus" returnType="int[]" visibility="public">
+          <Argument type="Integer" name="idMunicipio"/>
+        </Method>
+        <Method name="mapear" returnType="Solicitud" visibility="private">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="modelo.AsuntoDAO" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.NivelEducativoDAO" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.AdministradorDAO" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.MunicipioDAO" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.MunicipioDAO" target="modelo.CatalogoDAO"/>
+    <IsRelation name="is" source="modelo.AsuntoDAO" target="modelo.CatalogoDAO"/>
+    <IsRelation name="is" source="modelo.NivelEducativoDAO" target="modelo.CatalogoDAO"/>
+    <UseRelation source="modelo.SolicitudDAO" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="vista">
+  <ClassDiagramComponents>
+    <Class name="DlgComprobante" package="vista" visibility="public" xPosition="1231.0" yPosition="1331.0">
+      <Fields>
+        <Field name="area" type="JTextArea" visibility="private" isFinal="true"/>
+        <Field name="texto" type="String" visibility="private" isFinal="true"/>
+        <Field name="nombreArchivo" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Window" name="padre"/>
+          <Argument type="String" name="texto"/>
+          <Argument type="String" name="nombreArchivo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="guardar" returnType="void" visibility="private"/>
+        <Method name="imprimir" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="FrmCatalogos" package="vista" visibility="public" xPosition="1506.0" yPosition="515.0">
+      <Fields>
+        <Field name="modeloTabla" type="javax.swing.table.DefaultTableModel" visibility="private"/>
+        <Field name="btnAgregar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEliminar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnGuardar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbCatalogo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblCatalogo" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtNombre" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getIndiceCatalogo" returnType="int" visibility="public"/>
+        <Method name="getCmbCatalogo" returnType="javax.swing.JComboBox&lt;?&gt;" visibility="public"/>
+        <Method name="cargarTabla" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;Object[]&gt;" name="filas"/>
+        </Method>
+        <Method name="getIdSeleccionado" returnType="Integer" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="limpiarFormulario" returnType="void" visibility="public"/>
+        <Method name="getBtnAgregar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnGuardar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnEliminar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmConsulta" package="vista" visibility="public" xPosition="727.0" yPosition="18.0">
+      <Fields>
+        <Field name="modeloTabla" type="javax.swing.table.DefaultTableModel" visibility="private"/>
+        <Field name="btnBuscar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEliminar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnModificar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnPendiente" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegistrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnResolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVerTodas" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblSolicitudes" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtBuscar" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtBuscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnVolverActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBuscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnVerTodasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnResolverActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnModificarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEliminarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnRegistrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnPendienteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getTextoBusqueda" returnType="String" visibility="public"/>
+        <Method name="setTextoBusqueda" returnType="void" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="cargarTabla" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;Object[]&gt;" name="filas"/>
+        </Method>
+        <Method name="getCurpSeleccionada" returnType="String" visibility="public"/>
+        <Method name="getBtnBuscar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVerTodas" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnRegistrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnModificar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnEliminar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnResolver" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnPendiente" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmDashboard" package="vista" visibility="public" xPosition="1459.0" yPosition="18.0">
+      <Fields>
+        <Field name="grafica" type="vista.PanelGrafica" visibility="private" isFinal="true"/>
+        <Field name="btnActualizar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbMunicipio" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblPendientes" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblResueltos" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblTotal" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="pnlGrafica" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="cmbMunicipioActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="cargarMunicipios" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.Municipio&gt;" name="lista"/>
+        </Method>
+        <Method name="getMunicipioSeleccionado" returnType="modelo.Municipio" visibility="public"/>
+        <Method name="mostrarDatos" returnType="void" visibility="public">
+          <Argument type="int" name="pendientes"/>
+          <Argument type="int" name="resueltos"/>
+        </Method>
+        <Method name="getCmbMunicipio" returnType="javax.swing.JComboBox&lt;?&gt;" visibility="public"/>
+        <Method name="getBtnActualizar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmInicio" package="vista" visibility="public" xPosition="2215.0" yPosition="221.0">
+      <Fields>
+        <Field name="btnAdmin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnModificar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegistrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtCurp" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTurno" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnAdminActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnModificarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getCurp" returnType="String" visibility="public"/>
+        <Method name="getTurno" returnType="String" visibility="public"/>
+        <Method name="limpiarCampos" returnType="void" visibility="public"/>
+        <Method name="getBtnRegistrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnModificar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnAdmin" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnSalir" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmLogin" package="vista" visibility="public" xPosition="813.0" yPosition="830.0">
+      <Fields>
+        <Field name="Contrasena" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Usuario" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Usuario1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="btnEntrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtContrasena" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="txtUsuario" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtUsuarioActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtContrasenaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEntrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSalirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="limpiarContrasena" returnType="void" visibility="public"/>
+        <Method name="getBtnEntrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnSalir" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmMenu" package="vista" visibility="public" xPosition="1672.0" yPosition="1122.0">
+      <Fields>
+        <Field name="btnCatalogos" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCerrarSesion" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnConsulta" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnDashboard" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lblUsuario" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnCatalogosActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getBtnConsulta" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnCatalogos" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnDashboard" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnCerrarSesion" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnSalir" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmSolicitud" package="vista" visibility="public" xPosition="24.0" yPosition="18.0">
+      <Fields>
+        <Field name="btnLimpiar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegistrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbAsunto" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="cmbMunicipio" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="cmbNivel" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel13" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtApMaterno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtApPaterno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtCorreo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtCurp" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNombreAlumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTelefono" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTramitante" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtCurpActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtNombreAlumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtApPaternoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnRegistrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnLimpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnVolverActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtApMaternoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getCurp" returnType="String" visibility="public"/>
+        <Method name="getTramitante" returnType="String" visibility="public"/>
+        <Method name="getNombreAlumno" returnType="String" visibility="public"/>
+        <Method name="getApPaterno" returnType="String" visibility="public"/>
+        <Method name="getApMaterno" returnType="String" visibility="public"/>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="getCorreo" returnType="String" visibility="public"/>
+        <Method name="getNivelSeleccionado" returnType="modelo.NivelEducativo" visibility="public"/>
+        <Method name="getMunicipioSeleccionado" returnType="modelo.Municipio" visibility="public"/>
+        <Method name="getAsuntoSeleccionado" returnType="modelo.Asunto" visibility="public"/>
+        <Method name="cargarNiveles" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.NivelEducativo&gt;" name="lista"/>
+        </Method>
+        <Method name="cargarMunicipios" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.Municipio&gt;" name="lista"/>
+        </Method>
+        <Method name="cargarAsuntos" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.Asunto&gt;" name="lista"/>
+        </Method>
+        <Method name="setModoEdicion" returnType="void" visibility="public">
+          <Argument type="boolean" name="edicion"/>
+        </Method>
+        <Method name="cargarSolicitud" returnType="void" visibility="public">
+          <Argument type="modelo.Solicitud" name="s"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="getBtnRegistrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnLimpiar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Mensajes" package="vista" visibility="public" isFinal="true" xPosition="813.0" yPosition="1331.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="info" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="aviso" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="error" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="confirmar" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PanelGrafica" package="vista" visibility="public" xPosition="24.0" yPosition="1255.0">
+      <Fields>
+        <Field name="COLOR_PENDIENTE" type="Color" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="COLOR_RESUELTO" type="Color" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="pendientes" type="int" visibility="private"/>
+        <Field name="resueltos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setDatos" returnType="void" visibility="public">
+          <Argument type="int" name="pendientes"/>
+          <Argument type="int" name="resueltos"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="protected">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="dibujarBarra" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g2"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="base"/>
+          <Argument type="int" name="anchoBarra"/>
+          <Argument type="int" name="areaAlto"/>
+          <Argument type="int" name="tope"/>
+          <Argument type="int" name="valor"/>
+          <Argument type="int" name="total"/>
+          <Argument type="Color" name="color"/>
+          <Argument type="String" name="etiqueta"/>
+        </Method>
+        <Method name="centrar" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g2"/>
+          <Argument type="String" name="texto"/>
+          <Argument type="int" name="xCentro"/>
+          <Argument type="int" name="y"/>
+          <Argument type="Color" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

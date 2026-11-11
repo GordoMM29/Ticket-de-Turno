@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="util">
+  <ClassDiagramComponents>
+    <Class name="Conexion" package="util" visibility="public" isFinal="true" xPosition="531.0" yPosition="23.0">
+      <Fields>
+        <Field name="instancia" type="Conexion" visibility="private" isStatic="true"/>
+        <Field name="url" type="String" visibility="private" isFinal="true"/>
+        <Field name="usuario" type="String" visibility="private" isFinal="true"/>
+        <Field name="clave" type="String" visibility="private" isFinal="true"/>
+        <Field name="conexion" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDriver" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="getInstancia" returnType="Conexion" visibility="public" isStatic="true" isSynchronized="true"/>
+        <Method name="getConexion" returnType="Connection" visibility="public" isSynchronized="true"/>
+        <Method name="cerrarConexion" returnType="void" visibility="public" isStatic="true" isSynchronized="true"/>
+      </Methods>
+    </Class>
+    <Class name="GeneradorComprobante" package="util" visibility="public" isFinal="true" xPosition="9.0" yPosition="515.0">
+      <Fields>
+        <Field name="DOBLE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SIMPLE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="generarTexto" returnType="String" visibility="public" isStatic="true">
+          <Argument type="Solicitud" name="s"/>
+          <Argument type="String" name="municipio"/>
+          <Argument type="String" name="nivel"/>
+          <Argument type="String" name="asunto"/>
+          <Argument type="String" name="estatus"/>
+        </Method>
+        <Method name="linea" returnType="String" visibility="private" isStatic="true">
+          <Argument type="String" name="etiqueta"/>
+          <Argument type="String" name="valor"/>
+        </Method>
+        <Method name="guardar" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+          <Argument type="File" name="destino"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hash" package="util" visibility="public" isFinal="true" xPosition="417.0" yPosition="337.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="sha256" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Sesion" package="util" visibility="public" isFinal="true" xPosition="628.0" yPosition="515.0">
+      <Fields>
+        <Field name="administrador" type="Administrador" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Administrador" name="admin"/>
+        </Method>
+        <Method name="getAdministrador" returnType="Administrador" visibility="public" isStatic="true"/>
+        <Method name="haySesion" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="cerrar" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Sistema" package="util" visibility="public" isFinal="true" xPosition="285.0" yPosition="47.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="liberarRecursos" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="salir" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ValidadorCurp" package="util" visibility="public" isFinal="true" xPosition="9.0" yPosition="9.0">
+      <Fields>
+        <Field name="ENTIDADES" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="PATRON" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="DIAS_POR_MES" type="int[]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="normalizar" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="esValida" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="obtenerError" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="curp"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ValidadorDatos" package="util" visibility="public" isFinal="true" xPosition="9.0" yPosition="258.0">
+      <Fields>
+        <Field name="CORREO" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="NOMBRE" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="normalizarTelefono" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="telefonoValido" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="correoValido" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="nombreValido" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+          <Argument type="int" name="maxLongitud"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="util.Conexion" target="util.Conexion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instancia" source="util.Conexion" target="util.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

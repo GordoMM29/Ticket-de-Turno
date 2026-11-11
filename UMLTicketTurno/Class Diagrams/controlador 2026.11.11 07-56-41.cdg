@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="controlador">
+  <ClassDiagramComponents>
+    <Class name="CatalogoController" package="controlador" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="daos" type="CatalogoDAO&lt;?&gt;[]" visibility="private" isFinal="true"/>
+        <Field name="nombres" type="String[]" visibility="private" isFinal="true"/>
+        <Field name="longitudMaxima" type="int[]" visibility="private" isFinal="true"/>
+        <Field name="vista" type="FrmCatalogos" visibility="private" isFinal="true"/>
+        <Field name="alVolver" type="Runnable" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmCatalogos" name="vista"/>
+          <Argument type="Runnable" name="alVolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="indice" returnType="int" visibility="private"/>
+        <Method name="actual" returnType="CatalogoDAO&lt;?&gt;" visibility="private"/>
+        <Method name="cargar" returnType="void" visibility="private"/>
+        <Method name="textoValido" returnType="String" visibility="private"/>
+        <Method name="agregar" returnType="void" visibility="private"/>
+        <Method name="guardarCambios" returnType="void" visibility="private"/>
+        <Method name="eliminar" returnType="void" visibility="private"/>
+        <Method name="mostrarError" returnType="void" visibility="private">
+          <Argument type="SQLException" name="ex"/>
+          <Argument type="String" name="accion"/>
+        </Method>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="ConsultaController" package="controlador" visibility="public" xPosition="27.0" yPosition="427.0">
+      <Fields>
+        <Field name="vista" type="FrmConsulta" visibility="private" isFinal="true"/>
+        <Field name="alVolver" type="Runnable" visibility="private" isFinal="true"/>
+        <Field name="dao" type="SolicitudDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmConsulta" name="vista"/>
+          <Argument type="Runnable" name="alVolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="cargar" returnType="void" visibility="private">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="buscar" returnType="void" visibility="private"/>
+        <Method name="verTodas" returnType="void" visibility="private"/>
+        <Method name="curpElegida" returnType="String" visibility="private"/>
+        <Method name="registrar" returnType="void" visibility="private"/>
+        <Method name="modificar" returnType="void" visibility="private"/>
+        <Method name="regresarDeFormulario" returnType="void" visibility="private"/>
+        <Method name="eliminar" returnType="void" visibility="private"/>
+        <Method name="cambiarEstatus" returnType="void" visibility="private">
+          <Argument type="int" name="idEstatus"/>
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="DashboardController" package="controlador" visibility="public" xPosition="413.0" yPosition="494.0">
+      <Fields>
+        <Field name="vista" type="FrmDashboard" visibility="private" isFinal="true"/>
+        <Field name="alVolver" type="Runnable" visibility="private" isFinal="true"/>
+        <Field name="solicitudDAO" type="SolicitudDAO" visibility="private" isFinal="true"/>
+        <Field name="municipioDAO" type="MunicipioDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmDashboard" name="vista"/>
+          <Argument type="Runnable" name="alVolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="actualizar" returnType="void" visibility="private"/>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="InicioController" package="controlador" visibility="public" xPosition="1216.0" yPosition="70.0">
+      <Fields>
+        <Field name="vista" type="FrmInicio" visibility="private" isFinal="true"/>
+        <Field name="solicitudDAO" type="SolicitudDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmInicio" name="vista"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="verificarBaseDeDatos" returnType="void" visibility="private"/>
+        <Method name="abrirRegistro" returnType="void" visibility="private"/>
+        <Method name="abrirModificacion" returnType="void" visibility="private"/>
+        <Method name="abrirLogin" returnType="void" visibility="private"/>
+        <Method name="salir" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="LoginController" package="controlador" visibility="public" xPosition="884.0" yPosition="20.0">
+      <Fields>
+        <Field name="MAX_INTENTOS" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="vista" type="FrmLogin" visibility="private" isFinal="true"/>
+        <Field name="inicio" type="FrmInicio" visibility="private" isFinal="true"/>
+        <Field name="dao" type="AdministradorDAO" visibility="private" isFinal="true"/>
+        <Field name="intentos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmLogin" name="vista"/>
+          <Argument type="FrmInicio" name="inicio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="entrar" returnType="void" visibility="private"/>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="MenuController" package="controlador" visibility="public" xPosition="884.0" yPosition="324.0">
+      <Fields>
+        <Field name="vista" type="FrmMenu" visibility="private" isFinal="true"/>
+        <Field name="inicio" type="FrmInicio" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmMenu" name="vista"/>
+          <Argument type="FrmInicio" name="inicio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="abrirConsulta" returnType="void" visibility="private"/>
+        <Method name="abrirCatalogos" returnType="void" visibility="private"/>
+        <Method name="abrirDashboard" returnType="void" visibility="private"/>
+        <Method name="cerrarSesion" returnType="void" visibility="private"/>
+        <Method name="salir" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="SolicitudController" package="controlador" visibility="public" xPosition="413.0" yPosition="20.0">
+      <Fields>
+        <Field name="vista" type="FrmSolicitud" visibility="private" isFinal="true"/>
+        <Field name="alCerrar" type="Runnable" visibility="private" isFinal="true"/>
+        <Field name="original" type="Solicitud" visibility="private" isFinal="true"/>
+        <Field name="edicion" type="boolean" visibility="private" isFinal="true"/>
+        <Field name="solicitudDAO" type="SolicitudDAO" visibility="private" isFinal="true"/>
+        <Field name="municipioDAO" type="MunicipioDAO" visibility="private" isFinal="true"/>
+        <Field name="nivelDAO" type="NivelEducativoDAO" visibility="private" isFinal="true"/>
+        <Field name="asuntoDAO" type="AsuntoDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmSolicitud" name="vista"/>
+          <Argument type="Runnable" name="alCerrar"/>
+          <Argument type="Solicitud" name="original"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="guardar" returnType="void" visibility="private"/>
+        <Method name="validar" returnType="List&lt;String&gt;" visibility="private"/>
+        <Method name="construir" returnType="Solicitud" visibility="private">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="registrar" returnType="void" visibility="private"/>
+        <Method name="actualizar" returnType="void" visibility="private"/>
+        <Method name="mostrarComprobante" returnType="void" visibility="private">
+          <Argument type="Solicitud" name="s"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="private"/>
+        <Method name="cerrar" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

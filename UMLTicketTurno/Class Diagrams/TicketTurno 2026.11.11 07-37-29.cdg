@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TicketTurno">
+  <ClassDiagramComponents>
+    <Class name="CatalogoController" package="controlador" visibility="public" xPosition="214.0" yPosition="1489.0">
+      <Fields>
+        <Field name="daos" type="CatalogoDAO&lt;?&gt;[]" visibility="private" isFinal="true"/>
+        <Field name="nombres" type="String[]" visibility="private" isFinal="true"/>
+        <Field name="longitudMaxima" type="int[]" visibility="private" isFinal="true"/>
+        <Field name="vista" type="FrmCatalogos" visibility="private" isFinal="true"/>
+        <Field name="alVolver" type="Runnable" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmCatalogos" name="vista"/>
+          <Argument type="Runnable" name="alVolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="indice" returnType="int" visibility="private"/>
+        <Method name="actual" returnType="CatalogoDAO&lt;?&gt;" visibility="private"/>
+        <Method name="cargar" returnType="void" visibility="private"/>
+        <Method name="textoValido" returnType="String" visibility="private"/>
+        <Method name="agregar" returnType="void" visibility="private"/>
+        <Method name="guardarCambios" returnType="void" visibility="private"/>
+        <Method name="eliminar" returnType="void" visibility="private"/>
+        <Method name="mostrarError" returnType="void" visibility="private">
+          <Argument type="SQLException" name="ex"/>
+          <Argument type="String" name="accion"/>
+        </Method>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="ConsultaController" package="controlador" visibility="public" xPosition="4328.0" yPosition="167.0">
+      <Fields>
+        <Field name="vista" type="FrmConsulta" visibility="private" isFinal="true"/>
+        <Field name="alVolver" type="Runnable" visibility="private" isFinal="true"/>
+        <Field name="dao" type="SolicitudDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmConsulta" name="vista"/>
+          <Argument type="Runnable" name="alVolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="cargar" returnType="void" visibility="private">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="buscar" returnType="void" visibility="private"/>
+        <Method name="verTodas" returnType="void" visibility="private"/>
+        <Method name="curpElegida" returnType="String" visibility="private"/>
+        <Method name="registrar" returnType="void" visibility="private"/>
+        <Method name="modificar" returnType="void" visibility="private"/>
+        <Method name="regresarDeFormulario" returnType="void" visibility="private"/>
+        <Method name="eliminar" returnType="void" visibility="private"/>
+        <Method name="cambiarEstatus" returnType="void" visibility="private">
+          <Argument type="int" name="idEstatus"/>
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="DashboardController" package="controlador" visibility="public" xPosition="4656.0" yPosition="1158.0">
+      <Fields>
+        <Field name="vista" type="FrmDashboard" visibility="private" isFinal="true"/>
+        <Field name="alVolver" type="Runnable" visibility="private" isFinal="true"/>
+        <Field name="solicitudDAO" type="SolicitudDAO" visibility="private" isFinal="true"/>
+        <Field name="municipioDAO" type="MunicipioDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmDashboard" name="vista"/>
+          <Argument type="Runnable" name="alVolver"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="actualizar" returnType="void" visibility="private"/>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="InicioController" package="controlador" visibility="public" xPosition="3071.0" yPosition="439.0">
+      <Fields>
+        <Field name="vista" type="FrmInicio" visibility="private" isFinal="true"/>
+        <Field name="solicitudDAO" type="SolicitudDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmInicio" name="vista"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="verificarBaseDeDatos" returnType="void" visibility="private"/>
+        <Method name="abrirRegistro" returnType="void" visibility="private"/>
+        <Method name="abrirModificacion" returnType="void" visibility="private"/>
+        <Method name="abrirLogin" returnType="void" visibility="private"/>
+        <Method name="salir" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="LoginController" package="controlador" visibility="public" xPosition="984.0" yPosition="2693.0">
+      <Fields>
+        <Field name="MAX_INTENTOS" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="vista" type="FrmLogin" visibility="private" isFinal="true"/>
+        <Field name="inicio" type="FrmInicio" visibility="private" isFinal="true"/>
+        <Field name="dao" type="AdministradorDAO" visibility="private" isFinal="true"/>
+        <Field name="intentos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmLogin" name="vista"/>
+          <Argument type="FrmInicio" name="inicio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="entrar" returnType="void" visibility="private"/>
+        <Method name="volver" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="MenuController" package="controlador" visibility="public" xPosition="1010.0" yPosition="182.0">
+      <Fields>
+        <Field name="vista" type="FrmMenu" visibility="private" isFinal="true"/>
+        <Field name="inicio" type="FrmInicio" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmMenu" name="vista"/>
+          <Argument type="FrmInicio" name="inicio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="abrirConsulta" returnType="void" visibility="private"/>
+        <Method name="abrirCatalogos" returnType="void" visibility="private"/>
+        <Method name="abrirDashboard" returnType="void" visibility="private"/>
+        <Method name="cerrarSesion" returnType="void" visibility="private"/>
+        <Method name="salir" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="SolicitudController" package="controlador" visibility="public" xPosition="3765.0" yPosition="29.0">
+      <Fields>
+        <Field name="vista" type="FrmSolicitud" visibility="private" isFinal="true"/>
+        <Field name="alCerrar" type="Runnable" visibility="private" isFinal="true"/>
+        <Field name="original" type="Solicitud" visibility="private" isFinal="true"/>
+        <Field name="edicion" type="boolean" visibility="private" isFinal="true"/>
+        <Field name="solicitudDAO" type="SolicitudDAO" visibility="private" isFinal="true"/>
+        <Field name="municipioDAO" type="MunicipioDAO" visibility="private" isFinal="true"/>
+        <Field name="nivelDAO" type="NivelEducativoDAO" visibility="private" isFinal="true"/>
+        <Field name="asuntoDAO" type="AsuntoDAO" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="FrmSolicitud" name="vista"/>
+          <Argument type="Runnable" name="alCerrar"/>
+          <Argument type="Solicitud" name="original"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public"/>
+        <Method name="guardar" returnType="void" visibility="private"/>
+        <Method name="validar" returnType="List&lt;String&gt;" visibility="private"/>
+        <Method name="construir" returnType="Solicitud" visibility="private">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="registrar" returnType="void" visibility="private"/>
+        <Method name="actualizar" returnType="void" visibility="private"/>
+        <Method name="mostrarComprobante" returnType="void" visibility="private">
+          <Argument type="Solicitud" name="s"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="private"/>
+        <Method name="cerrar" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Administrador" package="modelo" visibility="public" xPosition="1480.0" yPosition="2623.0">
+      <Fields>
+        <Field name="idAdmin" type="int" visibility="private"/>
+        <Field name="usuario" type="String" visibility="private"/>
+        <Field name="contrasena" type="String" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idAdmin"/>
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="contrasena"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdAdmin" returnType="int" visibility="public"/>
+        <Method name="setIdAdmin" returnType="void" visibility="public">
+          <Argument type="int" name="idAdmin"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="String" name="usuario"/>
+        </Method>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="setContrasena" returnType="void" visibility="public">
+          <Argument type="String" name="contrasena"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AdministradorDAO" package="modelo" visibility="public" xPosition="1500.0" yPosition="2184.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="autenticar" returnType="Administrador" visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="clave"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Asunto" package="modelo" visibility="public" xPosition="2185.0" yPosition="1710.0">
+      <Fields>
+        <Field name="idAsunto" type="int" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idAsunto"/>
+          <Argument type="String" name="descripcion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdAsunto" returnType="int" visibility="public"/>
+        <Method name="setIdAsunto" returnType="void" visibility="public">
+          <Argument type="int" name="idAsunto"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AsuntoDAO" package="modelo" visibility="public" xPosition="2526.0" yPosition="1505.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="Asunto" visibility="protected">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CatalogoDAO" package="modelo" visibility="public" isAbstract="true" xPosition="159.0" yPosition="2025.0">
+      <Fields>
+        <Field name="tabla" type="String" visibility="private" isFinal="true"/>
+        <Field name="columnaId" type="String" visibility="private" isFinal="true"/>
+        <Field name="columnaTexto" type="String" visibility="private" isFinal="true"/>
+        <Field name="orden" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="protected">
+          <Argument type="String" name="tabla"/>
+          <Argument type="String" name="columnaId"/>
+          <Argument type="String" name="columnaTexto"/>
+          <Argument type="String" name="orden"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="T" visibility="protected" isAbstract="true">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+        <Method name="con" returnType="Connection" visibility="private"/>
+        <Method name="listar" returnType="List&lt;T&gt;" visibility="public"/>
+        <Method name="listarFilas" returnType="List&lt;Object[]&gt;" visibility="public"/>
+        <Method name="buscarPorId" returnType="T" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="insertar" returnType="boolean" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="actualizar" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="eliminar" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Estatus" package="modelo" visibility="public" xPosition="5340.0" yPosition="2734.0">
+      <Fields>
+        <Field name="PENDIENTE" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="RESUELTO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="idEstatus" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idEstatus"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdEstatus" returnType="int" visibility="public"/>
+        <Method name="setIdEstatus" returnType="void" visibility="public">
+          <Argument type="int" name="idEstatus"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Municipio" package="modelo" visibility="public" xPosition="4040.0" yPosition="1794.0">
+      <Fields>
+        <Field name="idMunicipio" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="ultimoTurno" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idMunicipio"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="int" name="ultimoTurno"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdMunicipio" returnType="int" visibility="public"/>
+        <Method name="setIdMunicipio" returnType="void" visibility="public">
+          <Argument type="int" name="idMunicipio"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getUltimoTurno" returnType="int" visibility="public"/>
+        <Method name="setUltimoTurno" returnType="void" visibility="public">
+          <Argument type="int" name="ultimoTurno"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MunicipioDAO" package="modelo" visibility="public" xPosition="2775.0" yPosition="1822.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="Municipio" visibility="protected">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NivelEducativo" package="modelo" visibility="public" xPosition="1517.0" yPosition="1107.0">
+      <Fields>
+        <Field name="idNivel" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="idNivel"/>
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getIdNivel" returnType="int" visibility="public"/>
+        <Method name="setIdNivel" returnType="void" visibility="public">
+          <Argument type="int" name="idNivel"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NivelEducativoDAO" package="modelo" visibility="public" xPosition="1281.0" yPosition="1684.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mapear" returnType="NivelEducativo" visibility="protected">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Solicitud" package="modelo" visibility="public" xPosition="2788.0" yPosition="2069.0">
+      <Fields>
+        <Field name="curp" type="String" visibility="private"/>
+        <Field name="nombreTramitante" type="String" visibility="private"/>
+        <Field name="nombreAlumno" type="String" visibility="private"/>
+        <Field name="apellidoPaterno" type="String" visibility="private"/>
+        <Field name="apellidoMaterno" type="String" visibility="private"/>
+        <Field name="telefono" type="String" visibility="private"/>
+        <Field name="correo" type="String" visibility="private"/>
+        <Field name="idNivel" type="int" visibility="private"/>
+        <Field name="idMunicipio" type="int" visibility="private"/>
+        <Field name="idAsunto" type="int" visibility="private"/>
+        <Field name="turno" type="int" visibility="private"/>
+        <Field name="idEstatus" type="int" visibility="private"/>
+        <Field name="fechaRegistro" type="Timestamp" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="curp"/>
+          <Argument type="String" name="nombreTramitante"/>
+          <Argument type="String" name="nombreAlumno"/>
+          <Argument type="String" name="apellidoPaterno"/>
+          <Argument type="String" name="apellidoMaterno"/>
+          <Argument type="String" name="telefono"/>
+          <Argument type="String" name="correo"/>
+          <Argument type="int" name="idNivel"/>
+          <Argument type="int" name="idMunicipio"/>
+          <Argument type="int" name="idAsunto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCurp" returnType="String" visibility="public"/>
+        <Method name="setCurp" returnType="void" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="getNombreTramitante" returnType="String" visibility="public"/>
+        <Method name="setNombreTramitante" returnType="void" visibility="public">
+          <Argument type="String" name="nombreTramitante"/>
+        </Method>
+        <Method name="getNombreAlumno" returnType="String" visibility="public"/>
+        <Method name="setNombreAlumno" returnType="void" visibility="public">
+          <Argument type="String" name="nombreAlumno"/>
+        </Method>
+        <Method name="getApellidoPaterno" returnType="String" visibility="public"/>
+        <Method name="setApellidoPaterno" returnType="void" visibility="public">
+          <Argument type="String" name="apellidoPaterno"/>
+        </Method>
+        <Method name="getApellidoMaterno" returnType="String" visibility="public"/>
+        <Method name="setApellidoMaterno" returnType="void" visibility="public">
+          <Argument type="String" name="apellidoMaterno"/>
+        </Method>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="getCorreo" returnType="String" visibility="public"/>
+        <Method name="setCorreo" returnType="void" visibility="public">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="getIdNivel" returnType="int" visibility="public"/>
+        <Method name="setIdNivel" returnType="void" visibility="public">
+          <Argument type="int" name="idNivel"/>
+        </Method>
+        <Method name="getIdMunicipio" returnType="int" visibility="public"/>
+        <Method name="setIdMunicipio" returnType="void" visibility="public">
+          <Argument type="int" name="idMunicipio"/>
+        </Method>
+        <Method name="getIdAsunto" returnType="int" visibility="public"/>
+        <Method name="setIdAsunto" returnType="void" visibility="public">
+          <Argument type="int" name="idAsunto"/>
+        </Method>
+        <Method name="getTurno" returnType="int" visibility="public"/>
+        <Method name="setTurno" returnType="void" visibility="public">
+          <Argument type="int" name="turno"/>
+        </Method>
+        <Method name="getIdEstatus" returnType="int" visibility="public"/>
+        <Method name="setIdEstatus" returnType="void" visibility="public">
+          <Argument type="int" name="idEstatus"/>
+        </Method>
+        <Method name="getFechaRegistro" returnType="Timestamp" visibility="public"/>
+        <Method name="setFechaRegistro" returnType="void" visibility="public">
+          <Argument type="Timestamp" name="fechaRegistro"/>
+        </Method>
+        <Method name="getNombreCompleto" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SolicitudDAO" package="modelo" visibility="public" xPosition="4113.0" yPosition="742.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="con" returnType="Connection" visibility="private"/>
+        <Method name="nullSiVacio" returnType="String" visibility="private" isStatic="true">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="registrar" returnType="int" visibility="public">
+          <Argument type="Solicitud" name="s"/>
+        </Method>
+        <Method name="siguienteTurno" returnType="int" visibility="private">
+          <Argument type="Connection" name="con"/>
+          <Argument type="int" name="idMunicipio"/>
+        </Method>
+        <Method name="existe" returnType="boolean" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="buscarPorCurp" returnType="Solicitud" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="buscarPorCurpYTurno" returnType="Solicitud" visibility="public">
+          <Argument type="String" name="curp"/>
+          <Argument type="int" name="turno"/>
+        </Method>
+        <Method name="listarFilas" returnType="List&lt;Object[]&gt;" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="actualizar" returnType="boolean" visibility="public">
+          <Argument type="Solicitud" name="s"/>
+        </Method>
+        <Method name="cambiarEstatus" returnType="boolean" visibility="public">
+          <Argument type="String" name="curp"/>
+          <Argument type="int" name="idEstatus"/>
+        </Method>
+        <Method name="eliminar" returnType="boolean" visibility="public">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="contarPorEstatus" returnType="int[]" visibility="public">
+          <Argument type="Integer" name="idMunicipio"/>
+        </Method>
+        <Method name="mapear" returnType="Solicitud" visibility="private">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TicketTurno" package="ticketturno" visibility="public" xPosition="5400.0" yPosition="1805.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Conexion" package="util" visibility="public" isFinal="true" xPosition="4540.0" yPosition="2744.0">
+      <Fields>
+        <Field name="instancia" type="Conexion" visibility="private" isStatic="true"/>
+        <Field name="url" type="String" visibility="private" isFinal="true"/>
+        <Field name="usuario" type="String" visibility="private" isFinal="true"/>
+        <Field name="clave" type="String" visibility="private" isFinal="true"/>
+        <Field name="conexion" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarDriver" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="getInstancia" returnType="Conexion" visibility="public" isStatic="true" isSynchronized="true"/>
+        <Method name="getConexion" returnType="Connection" visibility="public" isSynchronized="true"/>
+        <Method name="cerrarConexion" returnType="void" visibility="public" isStatic="true" isSynchronized="true"/>
+      </Methods>
+    </Class>
+    <Class name="GeneradorComprobante" package="util" visibility="public" isFinal="true" xPosition="2108.0" yPosition="2227.0">
+      <Fields>
+        <Field name="DOBLE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="SIMPLE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="generarTexto" returnType="String" visibility="public" isStatic="true">
+          <Argument type="Solicitud" name="s"/>
+          <Argument type="String" name="municipio"/>
+          <Argument type="String" name="nivel"/>
+          <Argument type="String" name="asunto"/>
+          <Argument type="String" name="estatus"/>
+        </Method>
+        <Method name="linea" returnType="String" visibility="private" isStatic="true">
+          <Argument type="String" name="etiqueta"/>
+          <Argument type="String" name="valor"/>
+        </Method>
+        <Method name="guardar" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+          <Argument type="File" name="destino"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hash" package="util" visibility="public" isFinal="true" xPosition="4173.0" yPosition="3205.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="sha256" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Sesion" package="util" visibility="public" isFinal="true" xPosition="2358.0" yPosition="2734.0">
+      <Fields>
+        <Field name="administrador" type="Administrador" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="iniciar" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Administrador" name="admin"/>
+        </Method>
+        <Method name="getAdministrador" returnType="Administrador" visibility="public" isStatic="true"/>
+        <Method name="haySesion" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="cerrar" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Sistema" package="util" visibility="public" isFinal="true" xPosition="5350.0" yPosition="2372.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="liberarRecursos" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="salir" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ValidadorCurp" package="util" visibility="public" isFinal="true" xPosition="5378.0" yPosition="2011.0">
+      <Fields>
+        <Field name="ENTIDADES" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="PATRON" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="DIAS_POR_MES" type="int[]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="normalizar" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="esValida" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="curp"/>
+        </Method>
+        <Method name="obtenerError" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="curp"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ValidadorDatos" package="util" visibility="public" isFinal="true" xPosition="4894.0" yPosition="2791.0">
+      <Fields>
+        <Field name="CORREO" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="NOMBRE" type="Pattern" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="normalizarTelefono" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="telefonoValido" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="telefono"/>
+        </Method>
+        <Method name="correoValido" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="correo"/>
+        </Method>
+        <Method name="nombreValido" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="String" name="texto"/>
+          <Argument type="int" name="maxLongitud"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DlgComprobante" package="vista" visibility="public" xPosition="4868.0" yPosition="2334.0">
+      <Fields>
+        <Field name="area" type="JTextArea" visibility="private" isFinal="true"/>
+        <Field name="texto" type="String" visibility="private" isFinal="true"/>
+        <Field name="nombreArchivo" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Window" name="padre"/>
+          <Argument type="String" name="texto"/>
+          <Argument type="String" name="nombreArchivo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="guardar" returnType="void" visibility="private"/>
+        <Method name="imprimir" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="FrmCatalogos" package="vista" visibility="public" xPosition="77.0" yPosition="731.0">
+      <Fields>
+        <Field name="modeloTabla" type="javax.swing.table.DefaultTableModel" visibility="private"/>
+        <Field name="btnAgregar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEliminar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnGuardar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbCatalogo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblCatalogo" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtNombre" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getIndiceCatalogo" returnType="int" visibility="public"/>
+        <Method name="getCmbCatalogo" returnType="javax.swing.JComboBox&lt;?&gt;" visibility="public"/>
+        <Method name="cargarTabla" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;Object[]&gt;" name="filas"/>
+        </Method>
+        <Method name="getIdSeleccionado" returnType="Integer" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="limpiarFormulario" returnType="void" visibility="public"/>
+        <Method name="getBtnAgregar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnGuardar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnEliminar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmConsulta" package="vista" visibility="public" xPosition="4790.0" yPosition="67.0">
+      <Fields>
+        <Field name="modeloTabla" type="javax.swing.table.DefaultTableModel" visibility="private"/>
+        <Field name="btnBuscar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnEliminar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnModificar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnPendiente" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegistrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnResolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVerTodas" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblSolicitudes" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtBuscar" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtBuscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnVolverActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBuscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnVerTodasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnResolverActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnModificarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEliminarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnRegistrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnPendienteActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getTextoBusqueda" returnType="String" visibility="public"/>
+        <Method name="setTextoBusqueda" returnType="void" visibility="public">
+          <Argument type="String" name="texto"/>
+        </Method>
+        <Method name="cargarTabla" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;Object[]&gt;" name="filas"/>
+        </Method>
+        <Method name="getCurpSeleccionada" returnType="String" visibility="public"/>
+        <Method name="getBtnBuscar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVerTodas" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnRegistrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnModificar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnEliminar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnResolver" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnPendiente" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmDashboard" package="vista" visibility="public" xPosition="4635.0" yPosition="1738.0">
+      <Fields>
+        <Field name="grafica" type="vista.PanelGrafica" visibility="private" isFinal="true"/>
+        <Field name="btnActualizar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbMunicipio" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblPendientes" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblResueltos" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblTotal" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="pnlGrafica" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="cmbMunicipioActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="cargarMunicipios" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.Municipio&gt;" name="lista"/>
+        </Method>
+        <Method name="getMunicipioSeleccionado" returnType="modelo.Municipio" visibility="public"/>
+        <Method name="mostrarDatos" returnType="void" visibility="public">
+          <Argument type="int" name="pendientes"/>
+          <Argument type="int" name="resueltos"/>
+        </Method>
+        <Method name="getCmbMunicipio" returnType="javax.swing.JComboBox&lt;?&gt;" visibility="public"/>
+        <Method name="getBtnActualizar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmInicio" package="vista" visibility="public" xPosition="808.0" yPosition="674.0">
+      <Fields>
+        <Field name="btnAdmin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnModificar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegistrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtCurp" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTurno" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnAdminActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnModificarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getCurp" returnType="String" visibility="public"/>
+        <Method name="getTurno" returnType="String" visibility="public"/>
+        <Method name="limpiarCampos" returnType="void" visibility="public"/>
+        <Method name="getBtnRegistrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnModificar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnAdmin" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnSalir" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmLogin" package="vista" visibility="public" xPosition="27.0" yPosition="2591.0">
+      <Fields>
+        <Field name="Contrasena" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Usuario" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Usuario1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="btnEntrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtContrasena" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="txtUsuario" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtUsuarioActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtContrasenaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEntrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSalirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="getContrasena" returnType="String" visibility="public"/>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="limpiarContrasena" returnType="void" visibility="public"/>
+        <Method name="getBtnEntrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnSalir" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmMenu" package="vista" visibility="public" xPosition="108.0" yPosition="116.0">
+      <Fields>
+        <Field name="btnCatalogos" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCerrarSesion" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnConsulta" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnDashboard" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSalir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lblUsuario" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnCatalogosActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="setUsuario" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getBtnConsulta" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnCatalogos" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnDashboard" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnCerrarSesion" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnSalir" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FrmSolicitud" package="vista" visibility="public" xPosition="1973.0" yPosition="95.0">
+      <Fields>
+        <Field name="btnLimpiar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRegistrar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnVolver" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbAsunto" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="cmbMunicipio" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="cmbNivel" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jComboBox2" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel12" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel13" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtApMaterno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtApPaterno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtCorreo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtCurp" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNombreAlumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTelefono" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTramitante" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtCurpActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtNombreAlumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtApPaternoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnRegistrarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnLimpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnVolverActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtApMaternoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="getCurp" returnType="String" visibility="public"/>
+        <Method name="getTramitante" returnType="String" visibility="public"/>
+        <Method name="getNombreAlumno" returnType="String" visibility="public"/>
+        <Method name="getApPaterno" returnType="String" visibility="public"/>
+        <Method name="getApMaterno" returnType="String" visibility="public"/>
+        <Method name="getTelefono" returnType="String" visibility="public"/>
+        <Method name="getCorreo" returnType="String" visibility="public"/>
+        <Method name="getNivelSeleccionado" returnType="modelo.NivelEducativo" visibility="public"/>
+        <Method name="getMunicipioSeleccionado" returnType="modelo.Municipio" visibility="public"/>
+        <Method name="getAsuntoSeleccionado" returnType="modelo.Asunto" visibility="public"/>
+        <Method name="cargarNiveles" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.NivelEducativo&gt;" name="lista"/>
+        </Method>
+        <Method name="cargarMunicipios" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.Municipio&gt;" name="lista"/>
+        </Method>
+        <Method name="cargarAsuntos" returnType="void" visibility="public">
+          <Argument type="java.util.List&lt;modelo.Asunto&gt;" name="lista"/>
+        </Method>
+        <Method name="setModoEdicion" returnType="void" visibility="public">
+          <Argument type="boolean" name="edicion"/>
+        </Method>
+        <Method name="cargarSolicitud" returnType="void" visibility="public">
+          <Argument type="modelo.Solicitud" name="s"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="getBtnRegistrar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnLimpiar" returnType="javax.swing.JButton" visibility="public"/>
+        <Method name="getBtnVolver" returnType="javax.swing.JButton" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Mensajes" package="vista" visibility="public" isFinal="true" xPosition="4093.0" yPosition="2791.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="info" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="aviso" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="error" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+        <Method name="confirmar" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Component" name="padre"/>
+          <Argument type="String" name="mensaje"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PanelGrafica" package="vista" visibility="public" xPosition="4052.0" yPosition="2334.0">
+      <Fields>
+        <Field name="COLOR_PENDIENTE" type="Color" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="COLOR_RESUELTO" type="Color" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="pendientes" type="int" visibility="private"/>
+        <Field name="resueltos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setDatos" returnType="void" visibility="public">
+          <Argument type="int" name="pendientes"/>
+          <Argument type="int" name="resueltos"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="protected">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="dibujarBarra" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g2"/>
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="base"/>
+          <Argument type="int" name="anchoBarra"/>
+          <Argument type="int" name="areaAlto"/>
+          <Argument type="int" name="tope"/>
+          <Argument type="int" name="valor"/>
+          <Argument type="int" name="total"/>
+          <Argument type="Color" name="color"/>
+          <Argument type="String" name="etiqueta"/>
+        </Method>
+        <Method name="centrar" returnType="void" visibility="private">
+          <Argument type="Graphics2D" name="g2"/>
+          <Argument type="String" name="texto"/>
+          <Argument type="int" name="xCentro"/>
+          <Argument type="int" name="y"/>
+          <Argument type="Color" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="vista" source="controlador.LoginController" target="vista.FrmLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.NivelEducativoDAO" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.AsuntoDAO" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.MenuController" target="vista.FrmMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="municipioDAO" source="controlador.SolicitudController" target="modelo.MunicipioDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.SolicitudController" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.MunicipioDAO" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dao" source="controlador.LoginController" target="modelo.AdministradorDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instancia" source="util.Conexion" target="util.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inicio" source="controlador.LoginController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="asuntoDAO" source="controlador.SolicitudController" target="modelo.AsuntoDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="administrador" source="util.Sesion" target="modelo.Administrador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.AdministradorDAO" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.InicioController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.SolicitudDAO" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.ConsultaController" target="vista.FrmConsulta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.DashboardController" target="vista.FrmDashboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="solicitudDAO" source="controlador.SolicitudController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.CatalogoController" target="modelo.CatalogoDAO" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.NivelEducativoDAO" target="modelo.CatalogoDAO"/>
+    <HasRelation name="nivelDAO" source="controlador.SolicitudController" target="modelo.NivelEducativoDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="solicitudDAO" source="controlador.InicioController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="original" source="controlador.SolicitudController" target="modelo.Solicitud" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="municipioDAO" source="controlador.DashboardController" target="modelo.MunicipioDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inicio" source="controlador.MenuController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="solicitudDAO" source="controlador.DashboardController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmDashboard" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.MunicipioDAO" target="modelo.CatalogoDAO"/>
+    <UseRelation source="util.GeneradorComprobante" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="util.Conexion" target="util.Conexion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="util.Sesion" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.AsuntoDAO" target="modelo.CatalogoDAO"/>
+    <HasRelation name="vista" source="controlador.SolicitudController" target="vista.FrmSolicitud" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dao" source="controlador.ConsultaController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.CatalogoController" target="vista.FrmCatalogos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
