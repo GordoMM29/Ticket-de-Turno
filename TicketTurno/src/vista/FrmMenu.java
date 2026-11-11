@@ -37,8 +37,8 @@ public class FrmMenu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        lblUsuario.setText("Administrador");
+        lblUsuario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        lblUsuario.setText("Sistema de Administrador");
 
         btnCatalogos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCatalogos.setText("Catalogos");
@@ -65,36 +65,39 @@ public class FrmMenu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnConsulta)
-                            .addComponent(btnCatalogos)
-                            .addComponent(btnSalir)
-                            .addComponent(btnDashboard)
-                            .addComponent(btnCerrarSesion)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(245, Short.MAX_VALUE))
+                    .addComponent(btnCatalogos)
+                    .addComponent(btnConsulta)
+                    .addComponent(btnDashboard))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(lblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 103, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(btnSalir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCerrarSesion)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addComponent(lblUsuario)
-                .addGap(69, 69, 69)
+                .addGap(59, 59, 59)
                 .addComponent(btnConsulta)
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
                 .addComponent(btnCatalogos)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(btnDashboard)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(btnCerrarSesion)
-                .addGap(42, 42, 42)
-                .addComponent(btnSalir)
-                .addGap(42, 42, 42))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalir)
+                    .addComponent(btnCerrarSesion))
+                .addGap(25, 25, 25))
         );
 
         pack();
