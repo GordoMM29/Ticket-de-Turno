@@ -2,7 +2,7 @@
 
 <ClassDiagram name="modelo">
   <ClassDiagramComponents>
-    <Class name="Administrador" package="modelo" visibility="public" xPosition="20.0" yPosition="20.0">
+    <Class name="Administrador" package="modelo" visibility="public" xPosition="6.0" yPosition="187.0">
       <Fields>
         <Field name="idAdmin" type="int" visibility="private"/>
         <Field name="usuario" type="String" visibility="private"/>
@@ -38,7 +38,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="AdministradorDAO" package="modelo" visibility="public" xPosition="320.0" yPosition="20.0">
+    <Class name="AdministradorDAO" package="modelo" visibility="public" xPosition="70.0" yPosition="20.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -48,7 +48,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Asunto" package="modelo" visibility="public" xPosition="620.0" yPosition="20.0">
+    <Class name="Asunto" package="modelo" visibility="public" xPosition="495.0" yPosition="20.0">
       <Fields>
         <Field name="idAsunto" type="int" visibility="private"/>
         <Field name="descripcion" type="String" visibility="private"/>
@@ -72,7 +72,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="AsuntoDAO" package="modelo" visibility="public" xPosition="920.0" yPosition="20.0">
+    <Class name="AsuntoDAO" package="modelo" visibility="public" xPosition="846.0" yPosition="66.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -83,7 +83,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="CatalogoDAO" package="modelo" visibility="public" isAbstract="true" xPosition="1220.0" yPosition="20.0">
+    <Class name="CatalogoDAO" package="modelo" visibility="public" isAbstract="true" xPosition="1113.0" yPosition="20.0">
       <Fields>
         <Field name="tabla" type="String" visibility="private" isFinal="true"/>
         <Field name="columnaId" type="String" visibility="private" isFinal="true"/>
@@ -120,7 +120,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Estatus" package="modelo" visibility="public" xPosition="1520.0" yPosition="20.0">
+    <Class name="Estatus" package="modelo" visibility="public" xPosition="34.0" yPosition="706.0">
       <Fields>
         <Field name="PENDIENTE" type="int" visibility="public" isStatic="true" isFinal="true"/>
         <Field name="RESUELTO" type="int" visibility="public" isStatic="true" isFinal="true"/>
@@ -146,7 +146,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Municipio" package="modelo" visibility="public" xPosition="1820.0" yPosition="20.0">
+    <Class name="Municipio" package="modelo" visibility="public" xPosition="1921.0" yPosition="20.0">
       <Fields>
         <Field name="idMunicipio" type="int" visibility="private"/>
         <Field name="nombre" type="String" visibility="private"/>
@@ -176,7 +176,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="MunicipioDAO" package="modelo" visibility="public" xPosition="2120.0" yPosition="20.0">
+    <Class name="MunicipioDAO" package="modelo" visibility="public" xPosition="1664.0" yPosition="98.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -187,7 +187,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="NivelEducativo" package="modelo" visibility="public" xPosition="20.0" yPosition="420.0">
+    <Class name="NivelEducativo" package="modelo" visibility="public" xPosition="1982.0" yPosition="406.0">
       <Fields>
         <Field name="idNivel" type="int" visibility="private"/>
         <Field name="nombre" type="String" visibility="private"/>
@@ -211,7 +211,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="NivelEducativoDAO" package="modelo" visibility="public" xPosition="320.0" yPosition="420.0">
+    <Class name="NivelEducativoDAO" package="modelo" visibility="public" xPosition="1636.0" yPosition="311.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public"/>
@@ -222,7 +222,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Solicitud" package="modelo" visibility="public" xPosition="620.0" yPosition="420.0">
+    <Class name="Solicitud" package="modelo" visibility="public" xPosition="474.0" yPosition="402.0">
       <Fields>
         <Field name="curp" type="String" visibility="private"/>
         <Field name="nombreTramitante" type="String" visibility="private"/>
@@ -310,7 +310,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="SolicitudDAO" package="modelo" visibility="public" xPosition="920.0" yPosition="420.0">
+    <Class name="SolicitudDAO" package="modelo" visibility="public" xPosition="1571.0" yPosition="637.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -358,13 +358,13 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
+    <UseRelation source="modelo.MunicipioDAO" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.AdministradorDAO" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.AsuntoDAO" target="modelo.CatalogoDAO"/>
+    <UseRelation source="modelo.SolicitudDAO" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="modelo.AsuntoDAO" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="modelo.NivelEducativoDAO" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.AdministradorDAO" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.MunicipioDAO" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="modelo.MunicipioDAO" target="modelo.CatalogoDAO"/>
-    <IsRelation name="is" source="modelo.AsuntoDAO" target="modelo.CatalogoDAO"/>
     <IsRelation name="is" source="modelo.NivelEducativoDAO" target="modelo.CatalogoDAO"/>
-    <UseRelation source="modelo.SolicitudDAO" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.MunicipioDAO" target="modelo.CatalogoDAO"/>
   </ClassDiagramRelations>
 </ClassDiagram>
