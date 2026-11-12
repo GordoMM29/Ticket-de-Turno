@@ -115,7 +115,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="26" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Panel de Estadisticas"/>
+        <Property name="text" type="java.lang.String" value="Panel de Estad&#xed;sticas"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblResueltos">

@@ -47,7 +47,7 @@ public class FrmInicio extends javax.swing.JFrame {
         jLabel1.setText("Ticket de Turno");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setText("Numero de turno:");
+        jLabel2.setText("Número de turno:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("CURP:");
@@ -56,7 +56,7 @@ public class FrmInicio extends javax.swing.JFrame {
         jLabel5.setText("Modificar mi solicitud:");
 
         btnAdmin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnAdmin.setText("Administracion");
+        btnAdmin.setText("Administración");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdminActionPerformed(evt);
@@ -64,10 +64,10 @@ public class FrmInicio extends javax.swing.JFrame {
         });
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnSalir.setText("Salir del Sistema");
+        btnSalir.setText("Salir del sistema");
 
         btnModificar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnModificar.setText("Buscar y Modificar");
+        btnModificar.setText("Buscar y modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
@@ -82,7 +82,7 @@ public class FrmInicio extends javax.swing.JFrame {
         btnRegistrar.setText("Registrar solicitud");
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("<html>Genera un Nuevo Turno<br>Para reguistrar tu Solicitud</html> ");
+        jLabel6.setText("<html>Genera un nuevo turno<br>para reguistrar tu solicitud</html> ");
         jLabel6.setToolTipText("");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -121,7 +121,7 @@ public class FrmInicio extends javax.swing.JFrame {
                                                     .addComponent(txtTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addGap(1, 1, 1))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 189, Short.MAX_VALUE)
                                         .addComponent(btnModificar))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(260, 260, 260)

@@ -90,7 +90,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Catalogo:"/>
+        <Property name="text" type="java.lang.String" value="Cat&#xe1;logo:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbCatalogo">

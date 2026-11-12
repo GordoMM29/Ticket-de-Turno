@@ -41,7 +41,7 @@ public class FrmMenu extends javax.swing.JFrame {
         lblUsuario.setText("Sistema de Administrador");
 
         btnCatalogos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnCatalogos.setText("Catalogos");
+        btnCatalogos.setText("Catálogos");
         btnCatalogos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCatalogosActionPerformed(evt);
@@ -58,7 +58,7 @@ public class FrmMenu extends javax.swing.JFrame {
         btnDashboard.setText("Dashboard");
 
         btnCerrarSesion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnCerrarSesion.setText("Cerrar sesion");
+        btnCerrarSesion.setText("Cerrar sesión");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

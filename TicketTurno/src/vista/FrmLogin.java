@@ -74,7 +74,7 @@ public class FrmLogin extends javax.swing.JFrame {
         });
 
         Usuario1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        Usuario1.setText("Iniciar Sesion");
+        Usuario1.setText("Iniciar Sesión");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

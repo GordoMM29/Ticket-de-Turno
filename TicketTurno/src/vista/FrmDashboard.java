@@ -43,7 +43,7 @@ public class FrmDashboard extends javax.swing.JFrame {
         lblTotal.setText("Total: 0");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 26)); // NOI18N
-        jLabel3.setText("Panel de Estadisticas");
+        jLabel3.setText("Panel de Estadísticas");
 
         lblResueltos.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblResueltos.setText("Resueltas: 0");

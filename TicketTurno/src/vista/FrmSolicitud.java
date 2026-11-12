@@ -127,14 +127,14 @@ public class FrmSolicitud extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel12.setText("Datos Del Alumno");
+        jLabel12.setText("Datos del Alumno");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(146, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(135, 135, 135))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -176,7 +176,7 @@ public class FrmSolicitud extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel2.setText(" Nombre de quien hace el tramite:");
+        jLabel2.setText(" Nombre de quien hace el trámite:");
 
         txtTramitante.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
