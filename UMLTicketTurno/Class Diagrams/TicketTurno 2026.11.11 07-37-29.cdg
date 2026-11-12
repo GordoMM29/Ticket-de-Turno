@@ -582,7 +582,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Hash" package="util" visibility="public" isFinal="true" xPosition="4173.0" yPosition="3205.0">
+    <Class name="Hash" package="util" visibility="public" isFinal="true" xPosition="4113.0" yPosition="2623.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="private"/>
@@ -1088,44 +1088,44 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="vista" source="controlador.LoginController" target="vista.FrmLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.NivelEducativoDAO" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.AsuntoDAO" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="vista" source="controlador.MenuController" target="vista.FrmMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="municipioDAO" source="controlador.SolicitudController" target="modelo.MunicipioDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="controlador.SolicitudController" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.MunicipioDAO" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="dao" source="controlador.LoginController" target="modelo.AdministradorDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="instancia" source="util.Conexion" target="util.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="inicio" source="controlador.LoginController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="asuntoDAO" source="controlador.SolicitudController" target="modelo.AsuntoDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="administrador" source="util.Sesion" target="modelo.Administrador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.AdministradorDAO" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="vista.FrmSolicitud" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="vista.FrmSolicitud" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="vista" source="controlador.InicioController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="modelo.SolicitudDAO" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="vista" source="controlador.ConsultaController" target="vista.FrmConsulta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="vista" source="controlador.DashboardController" target="vista.FrmDashboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="solicitudDAO" source="controlador.SolicitudController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="controlador.CatalogoController" target="modelo.CatalogoDAO" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="modelo.NivelEducativoDAO" target="modelo.CatalogoDAO"/>
-    <HasRelation name="nivelDAO" source="controlador.SolicitudController" target="modelo.NivelEducativoDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="solicitudDAO" source="controlador.InicioController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="original" source="controlador.SolicitudController" target="modelo.Solicitud" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.AsuntoDAO" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.SolicitudController" target="vista.FrmSolicitud" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dao" source="controlador.LoginController" target="modelo.AdministradorDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dao" source="controlador.ConsultaController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.MenuController" target="vista.FrmMenu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.CatalogoController" target="vista.FrmCatalogos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.AsuntoDAO" target="modelo.CatalogoDAO"/>
     <UseRelation source="vista.FrmSolicitud" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="municipioDAO" source="controlador.DashboardController" target="modelo.MunicipioDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="administrador" source="util.Sesion" target="modelo.Administrador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.MunicipioDAO" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="inicio" source="controlador.MenuController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="util.GeneradorComprobante" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.NivelEducativoDAO" target="modelo.CatalogoDAO"/>
+    <UseRelation source="modelo.SolicitudDAO" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.LoginController" target="vista.FrmLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.CatalogoController" target="modelo.CatalogoDAO" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.InicioController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="solicitudDAO" source="controlador.DashboardController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="vista.FrmDashboard" target="modelo.Municipio" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="modelo.MunicipioDAO" target="modelo.CatalogoDAO"/>
-    <UseRelation source="util.GeneradorComprobante" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="util.Conexion" target="util.Conexion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="nivelDAO" source="controlador.SolicitudController" target="modelo.NivelEducativoDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.Asunto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.DashboardController" target="vista.FrmDashboard" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="solicitudDAO" source="controlador.SolicitudController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inicio" source="controlador.LoginController" target="vista.FrmInicio" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="solicitudDAO" source="controlador.InicioController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="util.Sesion" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <IsRelation name="is" source="modelo.AsuntoDAO" target="modelo.CatalogoDAO"/>
-    <HasRelation name="vista" source="controlador.SolicitudController" target="vista.FrmSolicitud" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="dao" source="controlador.ConsultaController" target="modelo.SolicitudDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="vista" source="controlador.CatalogoController" target="vista.FrmCatalogos" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="vista.FrmSolicitud" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="original" source="controlador.SolicitudController" target="modelo.Solicitud" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="municipioDAO" source="controlador.SolicitudController" target="modelo.MunicipioDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="util.Conexion" target="util.Conexion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="vista" source="controlador.ConsultaController" target="vista.FrmConsulta" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="municipioDAO" source="controlador.DashboardController" target="modelo.MunicipioDAO" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="modelo.NivelEducativoDAO" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="controlador.SolicitudController" target="modelo.Solicitud" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instancia" source="util.Conexion" target="util.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="vista.FrmSolicitud" target="modelo.NivelEducativo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="modelo.MunicipioDAO" target="modelo.CatalogoDAO"/>
+    <UseRelation source="modelo.AdministradorDAO" target="modelo.Administrador" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

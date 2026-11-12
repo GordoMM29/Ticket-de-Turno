@@ -25,7 +25,7 @@ public class TicketTurno {
         } catch (Exception ex) {
         }
 
-        // Pase lo que pase al salir, se cierra la base de datos y la sesion
+        // Pase lo que pase al salir, se cierra la base de datos y la sesion&
         Runtime.getRuntime().addShutdownHook(new Thread(() -> Sistema.liberarRecursos()));
 
         SwingUtilities.invokeLater(() -> {
