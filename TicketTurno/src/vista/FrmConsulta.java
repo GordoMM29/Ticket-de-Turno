@@ -71,7 +71,7 @@ public class FrmConsulta extends javax.swing.JFrame {
             }
         });
 
-        tblSolicitudes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        tblSolicitudes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         tblSolicitudes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
