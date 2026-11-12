@@ -191,7 +191,7 @@ public class FrmSolicitud extends javax.swing.JFrame {
         txtCorreo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jLabel7.setText("Nivel edicativo:");
+        jLabel7.setText("Nivel Educativo:");
 
         cmbNivel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
